@@ -31,15 +31,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List list = [
-    "The Alchemist",
-    "Wings of Fire",
-    "Secret Seven",
-    "Sherlock Holmes",
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // to be discussed whether to put or not
       /*drawer: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -50,49 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),*/
       appBar: AppBar(
         //search bar in title
-        title: Row(
-          children: [
-            Expanded(flex: 1, child: Text("ReadCafe")),
-            Expanded(
-              flex: 3,
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.5,
-                child: GFSearchBar(
-                  searchBoxInputDecoration: InputDecoration(
-                    suffixIcon: Icon(Icons.search),
-                    hintText: "Search here ...",
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(8.0))),
-                  ),
-                  searchList: list,
-                  searchQueryBuilder: (query, list) {
-                    return list
-                        .where((item) =>
-                            '$item'.toLowerCase().contains(query.toLowerCase()))
-                        .toList();
-                  },
-                  overlaySearchListItemBuilder: (item) {
-                    return Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white)),
-                      padding: const EdgeInsets.all(8),
-                      child: Text(
-                        '$item',
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                    );
-                  },
-                  onItemSelected: (item) {
-                    setState(() {
-                      print('$item');
-                    });
-                  },
-                ),
-              ),
-            )
-          ],
-        ),
-
+        title: SearchBar(),
         actions: [
           ElevatedButton.icon(
               onPressed: () {}, icon: Icon(Icons.home), label: Text('Home')),
@@ -106,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               label: Text(""))
         ],
       ),
-
+      // see parallax swipper
       //body: ,
     );
   }
