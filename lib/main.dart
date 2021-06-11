@@ -13,9 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ReadCafe',
+
+      // add theme options
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
+
+      // call of homeScreen function
       home: MyHomePage(), //homepage here
     );
   }
@@ -43,16 +47,28 @@ class _MyHomePageState extends State<MyHomePage> {
         width: MediaQuery.of(context).size.width * 1,
         child: Drawer(),
       ),*/
+
+      // code for appbar
+
       appBar: AppBar(
-        //search bar in title
+        //search bar in title function in SearchBar.dart
         title: SearchBar(),
+
+        // icons of home screen 
         actions: [
+          // 1st homescreen
           ElevatedButton.icon(
               onPressed: () {}, icon: Icon(Icons.home), label: Text('Home')),
+
+          // 2nd About
           ElevatedButton.icon(
               onPressed: () {}, icon: Icon(Icons.book), label: Text('About')),
+
+          //3rd chat option for future using firebase cloud messages
           ElevatedButton.icon(
               onPressed: () {}, icon: Icon(Icons.chat), label: Text('Chat')),
+
+          //4th users info and other settings
           ElevatedButton.icon(
               onPressed: () {},
               icon: Icon(Icons.more_vert_outlined),

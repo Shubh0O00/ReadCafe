@@ -11,6 +11,7 @@ class SearchBar extends StatefulWidget {
 }
 
 class _SearchBarState extends State<SearchBar> {
+// list made for testing
   final List list = [
     "The Alchemist",
     "Wings of Fire",
@@ -21,18 +22,25 @@ class _SearchBarState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      // layout of search bar
+      // one row two expanded means 25% width of title to ReadCafe title
+      // 75% to the search bar
       children: [
         Expanded(flex: 1, child: Text("ReadCafe")),
         Expanded(
           flex: 3,
           child: Container(
+            //GFsearchBar from GetWidget library
             child: GFSearchBar(
               searchBoxInputDecoration: InputDecoration(
+                // all decoration part of searchBar
                 suffixIcon: Icon(Icons.search),
                 hintText: "Search here ...",
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8.0))),
               ),
+
+              //list defined above to be tested
               searchList: list,
               searchQueryBuilder: (query, list) {
                 return list
@@ -51,6 +59,8 @@ class _SearchBarState extends State<SearchBar> {
                   ),
                 );
               },
+
+              // this function is used to print selected items in console
               onItemSelected: (item) {
                 setState(() {
                   print('$item');
