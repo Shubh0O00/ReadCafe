@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:getwidget/getwidget.dart';
+import 'package:read_cafe/lowerSection.dart';
 import 'package:read_cafe/searchBar.dart';
+import 'package:read_cafe/upperSection.dart';
 
 void main() {
   runApp(MyApp());
@@ -54,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
         //search bar in title function in SearchBar.dart
         title: SearchBar(),
 
-        // icons of home screen 
+        // icons of home screen
         actions: [
           // 1st homescreen
           ElevatedButton.icon(
@@ -76,7 +77,38 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       // see parallax swipper
-      //body: ,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(children: [
+            // in this container we'll make the upper part showing book selected
+            // reviews written and you can rate that particular book
+
+            Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 0.7,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/3.jpg'),
+                      fit: BoxFit.cover)),
+              child: Upper(),
+            ),
+
+            // in this container we'll use a parallax swiper horizontally
+            // to show books available and there ratings
+
+            Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 0.3,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/2.jpg'),
+                      fit: BoxFit.cover)),
+              child: Lower(),
+            ),
+          ]),
+        ),
+      ),
+      //here we'll implement the function for footer
     );
   }
 }
