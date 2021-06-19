@@ -48,13 +48,30 @@ class _MyHomePageState extends State<MyHomePage> {
         title: SearchBar(),
         actions: [
           ElevatedButton.icon(
-              onPressed: () {}, icon: Icon(Icons.home), label: Text('Home')),
+            onPressed: () {
+              //add functionality here
+            },
+            icon: Icon(Icons.home),
+            label: Text('Home'),
+          ),
           ElevatedButton.icon(
-              onPressed: () {}, icon: Icon(Icons.book), label: Text('About')),
+            onPressed: () {
+              //add functionality here
+            },
+            icon: Icon(Icons.book),
+            label: Text('About'),
+          ),
           ElevatedButton.icon(
-              onPressed: () {}, icon: Icon(Icons.chat), label: Text('Chat')),
+            onPressed: () {
+              //add functionality here
+            },
+            icon: Icon(Icons.chat),
+            label: Text('Chat'),
+          ),
           ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                //add functionality here
+              },
               icon: Icon(Icons.more_vert_outlined),
               label: Text(""))
         ],
