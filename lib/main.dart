@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:read_cafe/searchBar.dart';
+import 'body.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         width: MediaQuery.of(context).size.width * 1,
         child: Drawer(),
       ),*/
+
       appBar: AppBar(
         //search bar in title
         title: SearchBar(),
@@ -76,8 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
               label: Text(""))
         ],
       ),
-      // see parallax swipper
-      //body: ,
+
+      body: MainBody(),
     );
   }
 }
