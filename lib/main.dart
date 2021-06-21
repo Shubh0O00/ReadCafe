@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:read_cafe/lowerSection.dart';
+
 import 'package:read_cafe/searchBar.dart';
-import 'package:read_cafe/upperSection.dart';
+
+import 'body.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,57 +58,39 @@ class _MyHomePageState extends State<MyHomePage> {
 
         // icons of home screen
         actions: [
-          // 1st homescreen
           ElevatedButton.icon(
-              onPressed: () {}, icon: Icon(Icons.home), label: Text('Home')),
-
-          // 2nd About
+            onPressed: () {
+              //add functionality here
+            },
+            icon: Icon(Icons.home),
+            label: Text('Home'),
+          ),
           ElevatedButton.icon(
-              onPressed: () {}, icon: Icon(Icons.book), label: Text('About')),
-
-          //3rd chat option for future using firebase cloud messages
+            onPressed: () {
+              //add functionality here
+            },
+            icon: Icon(Icons.book),
+            label: Text('About'),
+          ),
           ElevatedButton.icon(
-              onPressed: () {}, icon: Icon(Icons.chat), label: Text('Chat')),
-
-          //4th users info and other settings
+            onPressed: () {
+              //add functionality here
+            },
+            icon: Icon(Icons.chat),
+            label: Text('Chat'),
+          ),
           ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                //add functionality here
+              },
               icon: Icon(Icons.more_vert_outlined),
               label: Text(""))
         ],
       ),
+
       // see parallax swipper
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(children: [
-            // in this container we'll make the upper part showing book selected
-            // reviews written and you can rate that particular book
 
-            Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.7,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/3.jpg'),
-                      fit: BoxFit.cover)),
-              child: Upper(),
-            ),
-
-            // in this container we'll use a parallax swiper horizontally
-            // to show books available and there ratings
-
-            Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.3,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/2.jpg'),
-                      fit: BoxFit.cover)),
-              child: Lower(),
-            ),
-          ]),
-        ),
-      ),
+      body: MainBody(),
       //here we'll implement the function for footer
     );
   }
