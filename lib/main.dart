@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:read_cafe/searchBar.dart';
+import 'package:read_cafe/bodySections/searchBar.dart';
 
 import 'body.dart';
 

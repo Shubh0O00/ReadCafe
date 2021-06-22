@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:read_cafe/footer.dart';
-import 'package:read_cafe/upperSection.dart';
-import 'lowerSection.dart';
+import 'package:read_cafe/bodySections/footer.dart';
+import 'package:read_cafe/bodySections/infinityCards.dart';
+import 'package:read_cafe/bodySections/singleCard.dart';
 
 class MainBody extends StatelessWidget {
   const MainBody({Key? key}) : super(key: key);
@@ -10,34 +10,22 @@ class MainBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        child: Column(children: [
-          // in this container we'll make the upper part showing book selected
-          // reviews written and you can rate that particular book
-
-          Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.5,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/3.jpg'),
-                    fit: BoxFit.cover)),
-            child: Upper(),
-          ),
-
-          // in this container we'll use a parallax swiper horizontally
-          // to show books available and there ratings
-
-          Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.35,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/2.jpg'),
-                    fit: BoxFit.cover)),
-            child: Lower(),
-          ),
-          Footer(),
-        ]),
+        child: Column(
+          children: [
+            //for 10 pixel of space
+            SizedBox(height: 10.0),
+            //calling SingleCard Widget from singleCard.dart
+            SingleCard(),
+            //for 10 pixel of space
+            SizedBox(height: 10.0),
+            //calling InfinityCards Widget from infinityCards.dart
+            InfinityCards(),
+            //for 10 pixel of space
+            SizedBox(height: 10.0),
+            //calling Footer Widget from footer.dart
+            Footer(),
+          ],
+        ),
       ),
     );
   }
