@@ -91,7 +91,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // see parallax swipper
 
       body: MainBody(),
-      //here we'll implement the function for footer
     );
   }
 }
