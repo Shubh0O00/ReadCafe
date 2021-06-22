@@ -12,8 +12,6 @@ class MainBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            //for 10 pixel of space
-            SizedBox(height: 10.0),
             //calling SingleCard Widget from singleCard.dart
             SingleCard(),
             //for 10 pixel of space

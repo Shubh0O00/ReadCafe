@@ -7,11 +7,12 @@ class InfinityCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // in this container we'll use a parallax swiper horizontally
+      // in this container we'll use a infinite carousel
       // to show books available and there ratings
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.35,
       decoration: BoxDecoration(
+          // this is the background image of lower section
           image: DecorationImage(
               image: AssetImage('assets/images/2.jpg'), fit: BoxFit.cover)),
       child: Lower(),
