@@ -194,6 +194,7 @@ class Footer extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 //container2
                 Container(
                   width: (MediaQuery.of(context).size.width / 3) -
@@ -203,39 +204,64 @@ class Footer extends StatelessWidget {
                   color: Colors.brown, //color of the small container
                   child: Column(
                     children: <Widget>[
-                      Text(
-                        'Quick Links',
-                        style:
-                            //for text styling
-                            TextStyle(
-                          color: Colors.white, //text color
-                          fontSize: 30.0, //text size
-                          letterSpacing: 1.0,
+                      Container(
+                        width: double
+                            .infinity, //to cover the available entire space
+                        height: 40.0, //height for text
+                        child: Text(
+                          "Quick Links",
+                          textAlign:
+                              TextAlign.center, //to align the text on left
+                          style:
+                              //for text styling
+                              TextStyle(
+                            color: Colors.white, //text color
+                            fontSize: 25.0, //text size
+                            fontWeight: FontWeight.bold, //bold text
+                          ),
                         ),
                       ),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            bullet,
-                            style:
-                                //for text styling
-                                TextStyle(
-                              color: Colors.white, //text color
-                              fontSize: 40.0, //text size
-                              fontWeight: FontWeight.bold, //bold text
+                      Container(
+                        width: double
+                            .infinity, //to cover the available entire space
+                        height: 30.0, //height for text
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 30.0,
+                              width: 160.0,
                             ),
-                          ),
-                          Text(
-                            "Hi there",
-                            style:
-                                //for text styling
-                                TextStyle(
-                              color: Colors.white, //text color
-                              fontSize: 20.0, //text size
+                            Text(
+                              bullet,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30.0,
+                              ),
                             ),
-                          ),
-                        ],
-                      )
+                            SizedBox(
+                              height: 30.0,
+                              width: 5.0,
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                //add funtionality here
+                              },
+                              child: Text(
+                                "Quick Links",
+                                textAlign: TextAlign
+                                    .center, //to align the text on left
+                                style:
+                                    //for text styling
+                                    TextStyle(
+                                  color: Colors.white, //text color
+                                  fontSize: 20.0, //text size
+                                  fontWeight: FontWeight.bold, //bold text
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
