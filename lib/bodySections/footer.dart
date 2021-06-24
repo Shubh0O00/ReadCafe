@@ -491,6 +491,34 @@ class Footer extends StatelessWidget {
                   margin: EdgeInsets.all(10.0), //5 pxl margin
                   padding: EdgeInsets.all(10.0), //5 pxl padding
                   color: Colors.brown, //color of the small container
+                  child: Column(
+                    children: <Widget>[
+                      //to add the heading to the section
+                      Container(
+                        width: double
+                            .infinity, //to cover the available entire space
+                        height: 40.0, //height for text
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 40.0,
+                              width: 100.0,
+                            ),
+                            Text(
+                              "Contact Us",
+                              style:
+                                  //for text styling
+                                  TextStyle(
+                                color: Colors.white, //text color
+                                fontSize: 25.0, //text size
+                                fontWeight: FontWeight.bold, //bold text
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -498,6 +526,7 @@ class Footer extends StatelessWidget {
             width: double.infinity, //to cover the entire screen
             color: Colors.brown //color of the main container
             ),
+
         //container to create the last section of footer with text
         Container(
           color: Colors.brown[400], //for a lighter shade of brown
