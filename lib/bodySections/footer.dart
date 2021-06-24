@@ -1,10 +1,10 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 //class Footer to create a container for footer of the website
 class Footer extends StatelessWidget {
-  const Footer({Key? key}) : super(key: key);
+  Footer({Key? key}) : super(key: key);
+
+  final String bullet = "\u2022 ";
 
   @override
   //Widget to return a Container for footer
@@ -201,6 +201,43 @@ class Footer extends StatelessWidget {
                   margin: EdgeInsets.all(10.0), //5 pxl margin
                   padding: EdgeInsets.all(10.0), //5 pxl padding
                   color: Colors.brown, //color of the small container
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'Quick Links',
+                        style:
+                            //for text styling
+                            TextStyle(
+                          color: Colors.white, //text color
+                          fontSize: 30.0, //text size
+                          letterSpacing: 1.0,
+                        ),
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            bullet,
+                            style:
+                                //for text styling
+                                TextStyle(
+                              color: Colors.white, //text color
+                              fontSize: 40.0, //text size
+                              fontWeight: FontWeight.bold, //bold text
+                            ),
+                          ),
+                          Text(
+                            "Hi there",
+                            style:
+                                //for text styling
+                                TextStyle(
+                              color: Colors.white, //text color
+                              fontSize: 20.0, //text size
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
                 //container3
                 Container(
