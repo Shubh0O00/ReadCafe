@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 //class Footer to create a container for footer of the website
@@ -204,6 +206,7 @@ class Footer extends StatelessWidget {
                   color: Colors.brown, //color of the small container
                   child: Column(
                     children: <Widget>[
+                      //to add the heading to the section
                       Container(
                         width: double
                             .infinity, //to cover the available entire space
@@ -211,7 +214,7 @@ class Footer extends StatelessWidget {
                         child: Text(
                           "Quick Links",
                           textAlign:
-                              TextAlign.center, //to align the text on left
+                              TextAlign.center, //to align the text in center
                           style:
                               //for text styling
                               TextStyle(
@@ -221,40 +224,255 @@ class Footer extends StatelessWidget {
                           ),
                         ),
                       ),
+                      //container below this is to add the list of text buttons in the middle seciton of the footer for hyperlinks to other pages
+
+                      //container1
                       Container(
                         width: double
                             .infinity, //to cover the available entire space
                         height: 30.0, //height for text
                         child: Row(
+                          //to arrange the texts in a row
                           children: <Widget>[
+                            // to add a blank space for alignment
                             SizedBox(
                               height: 30.0,
                               width: 160.0,
                             ),
+                            //adding a bullet to the screen
                             Text(
-                              bullet,
+                              bullet, //define previously
+                              //for text styling
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30.0,
+                                color: Colors.white, //bullet color
+                                fontSize: 30.0, //bullet size
                               ),
                             ),
+                            //to add blank space for alignment
                             SizedBox(
                               height: 30.0,
                               width: 5.0,
                             ),
+                            //to add the hyperlink
                             TextButton(
                               onPressed: () {
                                 //add funtionality here
                               },
-                              child: Text(
-                                "Quick Links",
+                              child:
+                                  //text in the button
+                                  Text(
+                                "Contact",
                                 textAlign: TextAlign
-                                    .center, //to align the text on left
+                                    .center, //to align the text on center
                                 style:
                                     //for text styling
                                     TextStyle(
                                   color: Colors.white, //text color
-                                  fontSize: 20.0, //text size
+                                  fontSize: 15.0, //text size
+                                  fontWeight: FontWeight.bold, //bold text
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      //container2
+                      Container(
+                        width: double
+                            .infinity, //to cover the available entire space
+                        height: 30.0, //height for text
+                        child: Row(
+                          //to arrange the texts in a row
+                          children: <Widget>[
+                            // to add a blank space for alignment
+                            SizedBox(
+                              height: 30.0,
+                              width: 160.0,
+                            ),
+                            //adding a bullet to the screen
+                            Text(
+                              bullet, //define previously
+                              //for text styling
+                              style: TextStyle(
+                                color: Colors.white, //bullet color
+                                fontSize: 30.0, //bullet size
+                              ),
+                            ),
+                            //to add blank space for alignment
+                            SizedBox(
+                              height: 30.0,
+                              width: 5.0,
+                            ),
+                            //to add the hyperlink
+                            TextButton(
+                              onPressed: () {
+                                //add funtionality here
+                              },
+                              child:
+                                  //text in the button
+                                  Text(
+                                "Complaint",
+                                textAlign: TextAlign
+                                    .center, //to align the text on center
+                                style:
+                                    //for text styling
+                                    TextStyle(
+                                  color: Colors.white, //text color
+                                  fontSize: 15.0, //text size
+                                  fontWeight: FontWeight.bold, //bold text
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      //container3
+                      Container(
+                        width: double
+                            .infinity, //to cover the available entire space
+                        height: 30.0, //height for text
+                        child: Row(
+                          //to arrange the texts in a row
+                          children: <Widget>[
+                            // to add a blank space for alignment
+                            SizedBox(
+                              height: 30.0,
+                              width: 160.0,
+                            ),
+                            //adding a bullet to the screen
+                            Text(
+                              bullet, //define previously
+                              //for text styling
+                              style: TextStyle(
+                                color: Colors.white, //bullet color
+                                fontSize: 30.0, //bullet size
+                              ),
+                            ),
+                            //to add blank space for alignment
+                            SizedBox(
+                              height: 30.0,
+                              width: 5.0,
+                            ),
+                            //to add the hyperlink
+                            TextButton(
+                              onPressed: () {
+                                //add funtionality here
+                              },
+                              child:
+                                  //text in the button
+                                  Text(
+                                "Register",
+                                textAlign: TextAlign
+                                    .center, //to align the text on center
+                                style:
+                                    //for text styling
+                                    TextStyle(
+                                  color: Colors.white, //text color
+                                  fontSize: 15.0, //text size
+                                  fontWeight: FontWeight.bold, //bold text
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      //container4
+                      Container(
+                        width: double
+                            .infinity, //to cover the available entire space
+                        height: 30.0, //height for text
+                        child: Row(
+                          //to arrange the texts in a row
+                          children: <Widget>[
+                            // to add a blank space for alignment
+                            SizedBox(
+                              height: 30.0,
+                              width: 160.0,
+                            ),
+                            //adding a bullet to the screen
+                            Text(
+                              bullet, //define previously
+                              //for text styling
+                              style: TextStyle(
+                                color: Colors.white, //bullet color
+                                fontSize: 30.0, //bullet size
+                              ),
+                            ),
+                            //to add blank space for alignment
+                            SizedBox(
+                              height: 30.0,
+                              width: 5.0,
+                            ),
+                            //to add the hyperlink
+                            TextButton(
+                              onPressed: () {
+                                //add funtionality here
+                              },
+                              child:
+                                  //text in the button
+                                  Text(
+                                "GitHub Repository",
+                                textAlign: TextAlign
+                                    .center, //to align the text on center
+                                style:
+                                    //for text styling
+                                    TextStyle(
+                                  color: Colors.white, //text color
+                                  fontSize: 15.0, //text size
+                                  fontWeight: FontWeight.bold, //bold text
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      //container5
+                      Container(
+                        width: double
+                            .infinity, //to cover the available entire space
+                        height: 30.0, //height for text
+                        child: Row(
+                          //to arrange the texts in a row
+                          children: <Widget>[
+                            // to add a blank space for alignment
+                            SizedBox(
+                              height: 30.0,
+                              width: 160.0,
+                            ),
+                            //adding a bullet to the screen
+                            Text(
+                              bullet, //define previously
+                              //for text styling
+                              style: TextStyle(
+                                color: Colors.white, //bullet color
+                                fontSize: 30.0, //bullet size
+                              ),
+                            ),
+                            //to add blank space for alignment
+                            SizedBox(
+                              height: 30.0,
+                              width: 5.0,
+                            ),
+                            //to add the hyperlink
+                            TextButton(
+                              onPressed: () {
+                                //add funtionality here
+                              },
+                              child:
+                                  //text in the button
+                                  Text(
+                                "Terms and Conditions",
+                                textAlign: TextAlign
+                                    .center, //to align the text on center
+                                style:
+                                    //for text styling
+                                    TextStyle(
+                                  color: Colors.white, //text color
+                                  fontSize: 15.0, //text size
                                   fontWeight: FontWeight.bold, //bold text
                                 ),
                               ),
@@ -265,6 +483,7 @@ class Footer extends StatelessWidget {
                     ],
                   ),
                 ),
+
                 //container3
                 Container(
                   width: (MediaQuery.of(context).size.width / 3) -
