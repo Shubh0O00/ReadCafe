@@ -13,16 +13,20 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     //column to add widget in a column
     return Column(
+      //direction: Axis.vertical,
       children: <Widget>[
         Container(
             //Row to divide the Container
-            child: Row(
+            child: Wrap(
+              alignment: (MediaQuery.of(context).size.width >= 1536)
+                  ? WrapAlignment.start
+                  : WrapAlignment.center,
               children: <Widget>[
                 //Container to create a space of 1/3 of the screen to divide the previous container into 3 parts
                 //container1
                 Container(
-                  width: (MediaQuery.of(context).size.width / 3) -
-                      40, //(-40) for the margin and paddings
+                  width: 450, //(MediaQuery.of(context).size.width / 3) -
+                  //40, //(-40) for the margin and paddings
                   margin: EdgeInsets.all(10.0), //5 pxl margin
                   padding: EdgeInsets.all(10.0), //5 pxl padding
                   child:
@@ -199,8 +203,8 @@ class Footer extends StatelessWidget {
 
                 //container2
                 Container(
-                  width: (MediaQuery.of(context).size.width / 3) -
-                      10, //(-10) for the margin and paddings
+                  width: 450, //(MediaQuery.of(context).size.width / 3) -
+                  //40, //(-10) for the margin and paddings
                   margin: EdgeInsets.all(10.0), //5 pxl margin
                   padding: EdgeInsets.all(10.0), //5 pxl padding
                   color: Colors.brown, //color of the small container
@@ -486,8 +490,8 @@ class Footer extends StatelessWidget {
 
                 //container3
                 Container(
-                  width: (MediaQuery.of(context).size.width / 3) -
-                      10, //(-10) for the margin and paddings
+                  width: 450, //(MediaQuery.of(context).size.width / 3) -
+                  //10, //(-10) for the margin and paddings
                   margin: EdgeInsets.all(10.0), //5 pxl margin
                   padding: EdgeInsets.all(10.0), //5 pxl padding
                   color: Colors.brown, //color of the small container
@@ -498,23 +502,17 @@ class Footer extends StatelessWidget {
                         width: double
                             .infinity, //to cover the available entire space
                         height: 40.0, //height for text
-                        child: Row(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 40.0,
-                              width: 100.0,
-                            ),
-                            Text(
-                              "Contact Us",
-                              style:
-                                  //for text styling
-                                  TextStyle(
-                                color: Colors.white, //text color
-                                fontSize: 25.0, //text size
-                                fontWeight: FontWeight.bold, //bold text
-                              ),
-                            ),
-                          ],
+                        child: Text(
+                          "Contact Us",
+                          textAlign:
+                              TextAlign.center, //to align the text in center
+                          style:
+                              //for text styling
+                              TextStyle(
+                            color: Colors.white, //text color
+                            fontSize: 25.0, //text size
+                            fontWeight: FontWeight.bold, //bold text
+                          ),
                         ),
                       ),
                     ],
@@ -522,7 +520,11 @@ class Footer extends StatelessWidget {
                 ),
               ],
             ),
-            height: 280.0, //height of the main container
+            height: (MediaQuery.of(context).size.width >= 1536)
+                ? 280
+                : ((MediaQuery.of(context).size.width >= 1024)
+                    ? 560
+                    : 840), //height of the main container
             width: double.infinity, //to cover the entire screen
             color: Colors.brown //color of the main container
             ),
