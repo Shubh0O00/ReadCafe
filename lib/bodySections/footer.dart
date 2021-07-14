@@ -13,7 +13,6 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     //column to add widget in a column
     return Column(
-      //direction: Axis.vertical,
       children: <Widget>[
         Container(
             //Row to divide the Container
@@ -25,8 +24,7 @@ class Footer extends StatelessWidget {
                 //Container to create a space of 1/3 of the screen to divide the previous container into 3 parts
                 //container1
                 Container(
-                  width: 450, //(MediaQuery.of(context).size.width / 3) -
-                  //40, //(-40) for the margin and paddings
+                  width: 480,
                   margin: EdgeInsets.all(10.0), //5 pxl margin
                   padding: EdgeInsets.all(10.0), //5 pxl padding
                   child:
@@ -203,8 +201,7 @@ class Footer extends StatelessWidget {
 
                 //container2
                 Container(
-                  width: 450, //(MediaQuery.of(context).size.width / 3) -
-                  //40, //(-10) for the margin and paddings
+                  width: 480,
                   margin: EdgeInsets.all(10.0), //5 pxl margin
                   padding: EdgeInsets.all(10.0), //5 pxl padding
                   color: Colors.brown, //color of the small container
@@ -490,8 +487,7 @@ class Footer extends StatelessWidget {
 
                 //container3
                 Container(
-                  width: 450, //(MediaQuery.of(context).size.width / 3) -
-                  //10, //(-10) for the margin and paddings
+                  width: 480,
                   margin: EdgeInsets.all(10.0), //5 pxl margin
                   padding: EdgeInsets.all(10.0), //5 pxl padding
                   color: Colors.brown, //color of the small container
