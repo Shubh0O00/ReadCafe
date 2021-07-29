@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:infinite_carousel/infinite_carousel.dart';
+import 'package:read_cafe/api/bookClass.dart';
+import 'package:read_cafe/api/api.dart';
 
 class Lower extends StatefulWidget {
   const Lower({Key? key}) : super(key: key);
@@ -10,61 +10,50 @@ class Lower extends StatefulWidget {
 }
 
 class _LowerState extends State<Lower> {
-  // initialised the selectedIndex param of InfiniteScroll
-  // initialised the controller to control scroll
-  late InfiniteScrollController controller;
-  int selectedIndex = 0;
+  late Future<List<BookClass>> b;
+  int limit = 0;
 
-  // creating state initiation for every change in state of list
   @override
   void initState() {
     super.initState();
-    controller = InfiniteScrollController();
-  }
-
-  // function to dispose memory usage of controller
-  @override
-  void dispose() {
-    super.dispose();
-    controller.dispose();
+    b = fetchBooks(limit);
   }
 
   @override
   Widget build(BuildContext context) {
-    return InfiniteCarousel.builder(
-      // currently taking 10 books slider for test
-      itemCount: 10,
+    return Container(
+      width: double.infinity, //to cover the entire screen
+      height: MediaQuery.of(context).size.width * 0.41,
 
-      // item extent is the size one card will take in the
-      // horizontal list
-      itemExtent: 500,
-
-      // these are the other params available on pub dev
-      center: true,
-      anchor: 0.0,
-      velocityFactor: 0.2,
-      onIndexChanged: (index) {},
-      controller: controller,
-
-      // to change the axis of scroll
-      // i.e vertically or horizontally
-      axisDirection: Axis.horizontal,
-      // loop for infinite scroll
-      loop: true,
-      itemBuilder: (context, itemIndex, realIndex) {
-        return Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Container(
-              // decoration of the background container where
-              // books will be shown
-              decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(8.0)),
-              child: Center(
-                // using $itemIndex to access that particular container
-                child: Text("Hi'$itemIndex'"),
+      child: FutureBuilder<List<BookClass>>(
+        future: b,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 5,
               ),
-            ));
-      },
+              itemCount: snapshot.data!.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  margin: EdgeInsets.all(5.0),
+                  padding: EdgeInsets.all(5.0),
+                  height: 200,
+                  width: 200,
+                  color: Colors.blue,
+                  child: Center(
+                    child: Text(snapshot.data![index].title),
+                  ),
+                );
+              },
+            );
+          } else if (snapshot.hasError) {
+            return Text('${snapshot.error}');
+          }
+          // By default, show a loading spinner.
+          return const CircularProgressIndicator();
+        },
+      ),
     );
   }
 }
