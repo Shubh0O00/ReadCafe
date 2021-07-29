@@ -1,12 +1,26 @@
 import 'dart:ui';
-
+import 'package:read_cafe/api/bookClass.dart';
+import 'package:read_cafe/api/api.dart';
 import 'package:flutter/material.dart';
 
 //class Footer to create a container for footer of the website
-class Footer extends StatelessWidget {
+class Footer extends StatefulWidget {
   Footer({Key? key}) : super(key: key);
 
+  @override
+  State<Footer> createState() => _FooterState();
+}
+
+class _FooterState extends State<Footer> {
   final String bullet = "\u2022 ";
+
+  Future<List<BookClass>> b = fetchBooks();
+
+  @override
+  void initState() {
+    super.initState();
+    b = fetchBooks();
+  }
 
   @override
   //Widget to return a Container for footer
@@ -551,6 +565,28 @@ class Footer extends StatelessWidget {
             ),
           ),
         ),
+
+        //Testing api
+        //test successful
+        //List view can be buit on this architecture
+        //Using Future builder is necessary
+        /*
+        Container(
+            color: Colors.brown[400], //for a lighter shade of brown
+            width: double.infinity, // to aquire the entire screen width
+            height: 500.0, //container of height 50pxl
+            child: FutureBuilder<List<BookClass>>(
+              future: b,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data![0].title);
+                } else if (snapshot.hasError) {
+                  return Text('${snapshot.error}');
+                }
+                // By default, show a loading spinner.
+                return const CircularProgressIndicator();
+              },
+            )),*/
       ],
     );
   }
