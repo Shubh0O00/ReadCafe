@@ -2,9 +2,10 @@ import 'package:http/http.dart' as http;
 import 'package:read_cafe/api/bookClass.dart';
 import 'dart:convert';
 
-Future<List<BookClass>> fetchBooks() async {
+Future<List<BookClass>> fetchBooks(int pageLimit) async {
+  pageLimit *= 10;
   final response =
-      await http.get(Uri.parse('https://read-cafe.herokuapp.com/books/'));
+      await http.get(Uri.parse('http://localhost:3000/books/$pageLimit'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
