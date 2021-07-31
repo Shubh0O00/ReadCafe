@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:read_cafe/bodySections/footer.dart';
 import 'package:read_cafe/bodySections/infinityCards.dart';
 import 'package:read_cafe/bodySections/singleCard.dart';
+import 'package:read_cafe/bodySections/traversing.dart';
 
 class MainBody extends StatelessWidget {
   const MainBody({Key? key}) : super(key: key);
@@ -18,6 +19,9 @@ class MainBody extends StatelessWidget {
             SizedBox(height: 10.0),
             //calling InfinityCards Widget from infinityCards.dart
             InfinityCards(),
+
+            //adding traversing buttons
+            Pager(),
             //for 10 pixel of space
             SizedBox(height: 10.0),
             //calling Footer Widget from footer.dart

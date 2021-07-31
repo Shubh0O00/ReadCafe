@@ -16,7 +16,7 @@ class _LowerState extends State<Lower> {
   @override
   void initState() {
     super.initState();
-    b = fetchBooks(limit);
+    //b = fetchBooks(limit);
   }
 
   @override
@@ -24,34 +24,18 @@ class _LowerState extends State<Lower> {
     return Container(
       width: double.infinity, //to cover the entire screen
       height: MediaQuery.of(context).size.width * 0.41,
-
-      child: FutureBuilder<List<BookClass>>(
-        future: b,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 5,
-              ),
-              itemCount: snapshot.data!.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  margin: EdgeInsets.all(5.0),
-                  padding: EdgeInsets.all(5.0),
-                  height: 200,
-                  width: 200,
-                  color: Colors.blue,
-                  child: Center(
-                    child: Text(snapshot.data![index].title),
-                  ),
-                );
-              },
-            );
-          } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
-          }
-          // By default, show a loading spinner.
-          return const CircularProgressIndicator();
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 5,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 20,
+        ),
+        itemCount: 10,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            //image by url
+            decoration: BoxDecoration(color: Colors.amber),
+          );
         },
       ),
     );
