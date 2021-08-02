@@ -10,7 +10,7 @@ class InfinityCards extends StatelessWidget {
       // in this container we'll use a infinite carousel
       // to show books available and there ratings
       width: double.infinity,
-      height: MediaQuery.of(context).size.width * 0.41,
+      height: MediaQuery.of(context).size.width * 0.4,
       decoration: BoxDecoration(
           // this is the background image of lower section
           image: DecorationImage(
