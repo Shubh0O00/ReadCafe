@@ -10,29 +10,38 @@ class Pager extends StatefulWidget {
 class _PagerState extends State<Pager> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Align(
-            alignment: Alignment.topLeft,
-            child: TextButton(
-              child: Icon(
-                Icons.arrow_left,
-                size: 20,
+    return Wrap(children: <Widget>[
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton(
+                child: Icon(
+                  Icons.arrow_left,
+                  size: MediaQuery.of(context).size.width * 0.09,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
               ),
-              onPressed: () {},
-            )),
-        Align(
-          alignment: Alignment.topRight,
-          child: TextButton(
-            onPressed: () {},
-            child: Icon(
-              Icons.arrow_right,
-              size: 20,
             ),
-          ),
-        )
-      ],
-    );
+          ]),
+          Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {},
+                child: Icon(
+                  Icons.arrow_right,
+                  color: Colors.white,
+                  size: MediaQuery.of(context).size.width * 0.09,
+                ),
+              ),
+            ),
+          ]),
+        ],
+      )
+    ]);
   }
 }

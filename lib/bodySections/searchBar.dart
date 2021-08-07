@@ -26,7 +26,41 @@ class _SearchBarState extends State<SearchBar> {
       // one row two expanded means 25% width of title to ReadCafe title
       // 75% to the search bar
       children: [
-        Expanded(flex: 1, child: Text("ReadCafe")),
+        Expanded(
+          flex: 1,
+          child: Wrap(
+            children: [
+              Row(
+                children: <Widget>[
+                  //to add 'Read' on the screen
+                  Text(
+                    "Read",
+                    textAlign: TextAlign.left, //to align the text on left
+                    style:
+                        //for text styling
+                        TextStyle(
+                      color: Colors.white, //text color
+                      //text size
+                      fontWeight: FontWeight.bold, //bold text
+                    ),
+                  ),
+                  //to add 'Cafe' on the screen
+                  Text(
+                    "Cafe",
+                    textAlign: TextAlign.left, //to align the text on left
+                    style:
+                        //for text styling
+                        TextStyle(
+                      color: Colors.yellow[500], //text color
+                      //text size
+                      fontWeight: FontWeight.bold, //bold text
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
         Expanded(
           flex: 3,
           child: Container(
