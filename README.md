@@ -1,19 +1,46 @@
-# read_cafe
+# Read Cafe Server
+A web application using Flutter for book reviews.    
 
-A new Flutter project.
+## Description
+This is a flutter project to create the front-end and bring data from databases via server using APIs. 
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Dependencies
+- flutter version 2.2+
 
-A few resources to get you started if this is your first Flutter project:
+### Installing
+- Create a folder to clone the project
+- Clone the project in the folder
+- Open a cmd prompt and install dependencies by running pub get
+- Alternatively you can open the project folder in vs code and save the pubspec.yaml file.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Executing program
+- Run the program by:
+  - ```flutter run ```
+  - You will be prompted to choose an application to open the web app.
+- Alternatively, If you have flutter plugin installed in vs code press the run button on the top right and run without debugging.
+- To build enter ```flutter build web``` in cmd. 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Help
+- If the project does not work
+  - Check flutter version
+  - Check dependencies
+  - Ensure that there was no error while cloning
+  - Run pub get manually
+  - Ensure that web version is enabled in flutter [Check this](https://flutter.dev/docs/get-started/web)
+
+## Authors
+
+Shubham Pandit  
+- [shubhampandit00](https://www.linkedin.com/in/shubhampandit00/)  
+
+Aniket Tiwari
+- [Username Here]()
 
 
-test for branches added from footer branch...
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [Flutter Docs](https://flutter.dev/docs)
