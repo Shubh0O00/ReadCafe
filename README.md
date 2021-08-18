@@ -1,5 +1,6 @@
-# Read Cafe Server
+# Read Cafe
 A web application using Flutter for book reviews.    
+The server can be found here [readCafeServer](https://github.com/Shubh0O00/readCafeSErver.git)
 
 ## Description
 This is a flutter project to create the front-end and bring data from databases via server using APIs. 
@@ -36,7 +37,7 @@ Shubham Pandit
 - [shubhampandit00](https://www.linkedin.com/in/shubhampandit00/)  
 
 Aniket Tiwari
-- [Username Here]()
+- [aniket-tiwari-0798901a1](https://www.linkedin.com/in/aniket-tiwari-0798901a1/)
 
 
 ## Acknowledgments
